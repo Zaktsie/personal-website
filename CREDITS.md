@@ -19,13 +19,13 @@ Exact versions are pinned in [`package.json`](package.json). Full license texts 
 |------|------|--------|
 | JetBrains Mono | Body / UI monospace | [JetBrains](https://www.jetbrains.com/lp/mono/) (SIL Open Font License 1.1) |
 | Marcellus | Heading (Dune theme) | [Google Fonts](https://fonts.google.com/specimen/Marcellus) (Open Font License) |
-| Silkscreen | Heading (Arcade theme) | [Google Fonts — Silkscreen](https://fonts.google.com/specimen/Silkscreen) (Open Font License) |
+| Orbitron | Heading (Arcade theme) | [Google Fonts — Orbitron](https://fonts.google.com/specimen/Orbitron) (SIL Open Font License) |
 
 ## Arcade theme and Easter eggs (homage, not endorsement)
 
-The **Arcade** theme (`data-theme="arcade"`) is original CSS and typography: CRT-style atmosphere, neon accents, and HUD-style scanlines. It does **not** include art, music, or executable content from any commercial game.
+The **Arcade** theme (`data-theme="arcade"`) is original CSS and typography: a cyberpunk HUD atmosphere with neon cyan/magenta accents and thin holographic scanlines. It does **not** include art, music, or executable content from any commercial game.
 
-**Arcade mouse cursors** (`public/cursors/arcade-default.svg`, `arcade-pointer.svg`): shapes are a **pixellated** treatment of the [Material Design Icons](https://pictogrammers.com/library/mdi/) glyphs *cursor-default* and *cursor-pointer* (Apache License 2.0)—rasterized to 32×32, then outlined in black with a white fill to echo standard UI pointers.
+**Arcade mouse cursors** (`public/cursors/arcade-default.svg`, `arcade-pointer.svg`): original vector shapes (a neon-outlined arrow and a target-reticle pointer) drawn for this site — not derived from any third-party icon set.
 
 Keyboard Easter eggs (e.g. typed phrases, classic cheat-code sequence) are **original UI responses** meant as a nod to common online-game culture. They intentionally **exclude** Nintendo-owned franchises (e.g. Pokémon, Mario, Zelda) from copy and prompts.
 
@@ -36,11 +36,11 @@ The following are **not** sponsors or licensors of this site. Names below identi
 | Inspiration (genre / title family) | Rights holder (common) | Notes |
 |-----------------------------------|-------------------------|--------|
 | Tactical / competitive FPS culture (matchmaking, rounds, economy jokes) | [Valve Corporation](https://www.valvesoftware.com/) (*Counter-Strike* series) | Trademarks include e.g. Counter-Strike, CS2. |
-| Action RPG / “one more map” grind culture | [Grinding Gear Games](https://www.grindinggear.com/) (*Path of Exile*) | *Path of Exile* is a trademark of GGG. |
-| 4X / technology and civic “research queue” jokes | [Take-Two Interactive Software, Inc.](https://www.take2games.com/) / [Firaxis Games](https://firaxis.com/) (*Sid Meier’s Civilization* series) | *Civilization* and related marks are property of their owners. |
 | “Konami code” (↑↑↓↓←→←→BA) cheat sequence | [Konami Group Corporation](https://www.konami.com/) (popularized with *Contra* and many others) | Sequence is widely used as an Easter egg in software; this site implements an independent toast/visual only—**not** Nintendo-related. |
 
-**Disclaimer:** This is an independent personal portfolio. It is **not** affiliated with, endorsed by, or sponsored by Valve, Grinding Gear Games, Take-Two, Firaxis, Konami, or any game publisher. All trademarks are the property of their respective owners.
+Cyberpunk-flavored copy (e.g. "netrunner," "flatline," "chromed," "Black ICE," "neural uplink") uses generic terminology that originates from cyberpunk fiction at large (e.g. William Gibson's *Neuromancer*) and recurs across many games and stories in the genre. It is not drawn from, or meant to evoke, any single title or publisher.
+
+**Disclaimer:** This is an independent personal portfolio. It is **not** affiliated with, endorsed by, or sponsored by Valve, Konami, or any game publisher. All trademarks are the property of their respective owners.
 
 If a rights holder prefers a specific credit line changed, open an issue or contact the site owner.
 

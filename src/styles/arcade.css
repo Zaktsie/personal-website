@@ -1,44 +1,51 @@
 /*
- * Arcade theme — CRT / late-night HUD, neon progression (gold → emerald → amber → magenta → azure).
- * Homage tone: PC / online games (e.g. ARPG, tac FPS, 4X); no Nintendo-franchise references in copy.
+ * Arcade theme — cyberpunk HUD: crisp neon (cyan/magenta), holographic scanlines,
+ * sharp geometric type. No retro CRT grain/vignette, no pixel-art chrome.
+ * Homage tone: tac FPS + cyberpunk vocabulary; no Nintendo-franchise references in copy.
  * See CREDITS.md for fonts and trademark disclaimers.
  */
 
 :root:where([data-theme="arcade"]) {
-  --color-bg: oklch(0.1 0.035 285);
-  --color-surface: oklch(0.13 0.04 282);
-  --color-text: oklch(0.94 0.018 165);
-  --color-muted: oklch(0.6 0.045 260);
-  --color-border: oklch(0.3 0.07 285);
+  --color-bg: oklch(0.08 0.03 288);
+  --color-surface: oklch(0.13 0.045 288);
+  --color-text: oklch(0.96 0.015 220);
+  --color-muted: oklch(0.63 0.05 260);
+  --color-border: oklch(0.46 0.1 280);
 
-  --color-accent-hero: oklch(0.84 0.13 92);
-  --color-accent-projects: oklch(0.72 0.19 152);
-  --color-accent-experience: oklch(0.78 0.17 72);
-  --color-accent-skills: oklch(0.64 0.24 312);
-  --color-accent-blog: oklch(0.7 0.15 238);
+  --color-accent-hero: oklch(0.83 0.14 200);
+  --color-accent-projects: oklch(0.74 0.23 340);
+  --color-accent-experience: oklch(0.83 0.16 95);
+  --color-accent-skills: oklch(0.68 0.22 305);
+  --color-accent-blog: oklch(0.73 0.17 250);
 
-  --color-glow-hero: oklch(0.68 0.11 92 / 0.38);
-  --color-glow-projects: oklch(0.52 0.17 152 / 0.36);
-  --color-glow-experience: oklch(0.58 0.14 72 / 0.34);
-  --color-glow-skills: oklch(0.48 0.22 312 / 0.38);
-  --color-glow-blog: oklch(0.48 0.14 238 / 0.34);
+  --color-glow-hero: oklch(0.68 0.15 200 / 0.4);
+  --color-glow-projects: oklch(0.58 0.22 340 / 0.4);
+  --color-glow-experience: oklch(0.62 0.16 95 / 0.36);
+  --color-glow-skills: oklch(0.52 0.22 305 / 0.4);
+  --color-glow-blog: oklch(0.55 0.17 250 / 0.36);
 
-  --font-heading: "Silkscreen", "JetBrains Mono Variable", ui-monospace, monospace;
-  --arcade-grain-opacity: 0.055;
-  --arcade-vignette-strength: 0.5;
-  --arcade-phosphor-tint: oklch(0.42 0.1 175 / 0.12);
+  --font-heading: "Orbitron", "JetBrains Mono Variable", ui-monospace, monospace;
+  --arcade-scan-opacity: 0.05;
+  --arcade-glow-strength: 0.4;
 
-  /* 32×32 — pixellated from MDI cursor-default / cursor-pointer (white fill, black edge) */
-  --arcade-cursor-default: url("/cursors/arcade-default.svg") 9 3, auto;
-  --arcade-cursor-pointer: url("/cursors/arcade-pointer.svg") 13 4, pointer;
+  /* Original vector cursors: thin neon-outlined arrow / target reticle */
+  --arcade-cursor-default: url("/cursors/arcade-default.svg") 5 3, auto;
+  --arcade-cursor-pointer: url("/cursors/arcade-pointer.svg") 16 16, pointer;
 }
 
 html[data-theme="arcade"] body {
   font-family: var(--font-mono);
-  background-color: var(--color-bg);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   cursor: var(--arcade-cursor-default);
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 95% 55% at 18% 0%, oklch(0.3 0.11 290 / 0.85) 0%, transparent 58%),
+    radial-gradient(ellipse 80% 50% at 88% 30%, oklch(0.26 0.15 330 / 0.65) 0%, transparent 58%),
+    radial-gradient(ellipse 85% 50% at 10% 64%, oklch(0.25 0.13 200 / 0.6) 0%, transparent 58%),
+    radial-gradient(ellipse 90% 50% at 92% 100%, oklch(0.26 0.14 305 / 0.65) 0%, transparent 58%),
+    linear-gradient(180deg, oklch(0.09 0.032 288) 0%, oklch(0.065 0.024 288) 100%);
+  background-repeat: no-repeat;
 }
 
 /* Clickable / hand targets */
@@ -72,7 +79,7 @@ html[data-theme="arcade"] :is(
   cursor: text;
 }
 
-/* Phosphor bloom + noise (below main z-10, above base bg) */
+/* Ambient neon glow + HUD grid — fixed to viewport, no darkening vignette */
 html[data-theme="arcade"] body::before {
   content: "";
   position: fixed;
@@ -82,45 +89,89 @@ html[data-theme="arcade"] body::before {
   opacity: 1;
   background:
     radial-gradient(
-      ellipse 100% 50% at 50% 0%,
-      var(--arcade-phosphor-tint) 0%,
-      transparent 58%
+      ellipse 75% 50% at 8% 0%,
+      oklch(0.65 0.19 200 / 0.32) 0%,
+      transparent 62%
     ),
     radial-gradient(
-      ellipse 55% 40% at 85% 88%,
-      oklch(0.38 0.18 305 / 0.14) 0%,
-      transparent 55%
+      ellipse 65% 50% at 92% 100%,
+      oklch(0.6 0.24 330 / 0.32) 0%,
+      transparent 62%
     ),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  background-size: auto, auto, 160px 160px;
-  mix-blend-mode: soft-light;
+    repeating-linear-gradient(
+      90deg,
+      oklch(0.78 0.16 220 / 0.1) 0px,
+      oklch(0.78 0.16 220 / 0.1) 1px,
+      transparent 1px,
+      transparent 48px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      oklch(0.78 0.16 220 / 0.1) 0px,
+      oklch(0.78 0.16 220 / 0.1) 1px,
+      transparent 1px,
+      transparent 48px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      oklch(0.8 0.2 330 / 0.14) 0px,
+      oklch(0.8 0.2 330 / 0.14) 1.5px,
+      transparent 1.5px,
+      transparent 192px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      oklch(0.8 0.2 330 / 0.14) 0px,
+      oklch(0.8 0.2 330 / 0.14) 1.5px,
+      transparent 1.5px,
+      transparent 192px
+    );
+  mix-blend-mode: screen;
+  animation: arcade-ambient-drift 12s ease-in-out infinite;
 }
 
-/* Vignette + micro-grain */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-theme="arcade"] body::before {
+    animation: arcade-ambient-drift 12s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="arcade"] body::before {
+    animation: none;
+  }
+}
+
+@keyframes arcade-ambient-drift {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Thin holographic scanlines — sparse, crisp, no analog grain */
 html[data-theme="arcade"] body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 9;
   pointer-events: none;
-  opacity: var(--arcade-grain-opacity, 0.05);
-  background:
-    radial-gradient(
-      ellipse 75% 75% at 50% 50%,
-      transparent 35%,
-      oklch(0.06 0.05 290 / var(--arcade-vignette-strength, 0.5)) 100%
-    ),
-    repeating-radial-gradient(
-      circle at 20% 40%,
-      oklch(0.5 0 0 / 0.06) 0 0.5px,
-      transparent 0.6px 20px
-    );
-  mix-blend-mode: multiply;
+  opacity: var(--arcade-scan-opacity, 0.05);
+  background: repeating-linear-gradient(
+    0deg,
+    oklch(0.85 0.1 200 / 0.5) 0px,
+    oklch(0.85 0.1 200 / 0.5) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
 }
 
-/* Stronger HUD scanlines — phosphor green tint */
 html[data-theme="arcade"] body.hud-scanlines::after {
-  --hud-scanline-stripe: oklch(0.55 0.09 165 / 0.055);
+  --hud-scanline-stripe: oklch(0.7 0.14 200 / 0.05);
 }
 
 html[data-theme="arcade"] ::selection {
@@ -128,11 +179,48 @@ html[data-theme="arcade"] ::selection {
   color: var(--color-text);
 }
 
-/* Konami cheat: rim glow on Arcade theme only */
+/*
+ * Structural HUD language (cyberpunk.net-inspired): angular cut-corner cards
+ * and buttons instead of rounded corners, bolder all-caps labels. Color
+ * palette stays original neon cyan/magenta — see CREDITS.md.
+ */
+html[data-theme="arcade"] :is(.hud-frame, [class*="rounded-lg"], [class*="rounded-xl"]) {
+  border-radius: 0;
+  clip-path: polygon(
+    22px 0,
+    100% 0,
+    100% calc(100% - 22px),
+    calc(100% - 22px) 100%,
+    0 100%,
+    0 22px
+  );
+}
+
+html[data-theme="arcade"] .hud-frame::before {
+  border-radius: 0;
+}
+
+html[data-theme="arcade"] .hud-frame::after {
+  border-radius: 0;
+}
+
+html[data-theme="arcade"] .hud-status {
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+html[data-theme="arcade"] h1,
+html[data-theme="arcade"] h2,
+html[data-theme="arcade"] h3,
+html[data-theme="arcade"] h4 {
+  letter-spacing: 0.01em;
+}
+
+/* Konami cheat: neon rim pulse on Arcade theme only */
 html[data-theme="arcade"][data-arcade-cheat="konami"] body {
   box-shadow:
-    inset 0 0 0 1px oklch(0.75 0.2 125 / 0.45),
-    inset 0 0 80px oklch(0.55 0.15 300 / 0.15);
+    inset 0 0 0 1px oklch(0.8 0.16 200 / 0.55),
+    inset 0 0 90px oklch(0.6 0.22 330 / 0.2);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -145,12 +233,12 @@ html[data-theme="arcade"][data-arcade-cheat="konami"] body {
   0%,
   100% {
     box-shadow:
-      inset 0 0 0 1px oklch(0.75 0.2 125 / 0.45),
-      inset 0 0 80px oklch(0.55 0.15 300 / 0.12);
+      inset 0 0 0 1px oklch(0.8 0.16 200 / 0.55),
+      inset 0 0 90px oklch(0.6 0.22 330 / 0.16);
   }
   50% {
     box-shadow:
-      inset 0 0 0 1px oklch(0.72 0.22 195 / 0.55),
-      inset 0 0 100px oklch(0.5 0.18 280 / 0.2);
+      inset 0 0 0 1px oklch(0.76 0.22 330 / 0.6),
+      inset 0 0 110px oklch(0.68 0.15 200 / 0.24);
   }
 }

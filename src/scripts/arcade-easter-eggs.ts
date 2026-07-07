@@ -19,9 +19,9 @@ const KONAMI_SEQUENCE = [
 
 /** Longest-first so shorter words don’t steal matches (e.g. glhf vs gg). */
 const PHRASE_TOASTS: readonly { pattern: string; message: string }[] = [
-  { pattern: "onemoreturn", message: "One more turn… then sleep. Promise." },
-  { pattern: "lootfilter", message: "Loot filter mindset: rares only." },
-  { pattern: "techtree", message: "Still researching — queue looks civil." },
+  { pattern: "netrunner", message: "Netrunner mode: quiet please." },
+  { pattern: "flatline", message: "Flatlined? Reboot and go again." },
+  { pattern: "chromed", message: "Chromed up and ready." },
   { pattern: "forcebuy", message: "Eco’s tight? Next round decides." },
   { pattern: "rushb", message: "Your defaults are your business." },
   { pattern: "ggwp", message: "Good game, well played." },
@@ -136,7 +136,7 @@ function logArcadeConsoleBannerOnce(): void {
     "font-family: monospace; color: #34d399; line-height: 1.2;",
   );
   console.log(
-    "%c ARPG grinds · tac FPS banter · one-more-turn strategy — unofficial homage; not endorsed.",
+    "%c Tac FPS banter · netrunner vibes — unofficial homage; not endorsed.",
     "color: #94a3b8; font-size: 11px;",
   );
   console.log(

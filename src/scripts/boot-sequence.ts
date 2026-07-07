@@ -15,9 +15,9 @@ const BOOT_LINES: BootLine[] = [
 const ARCADE_BOOT_LINES: BootLine[] = [
   { text: "[PATCH] Client checksum verified… OK", delay: 0 },
   { text: "[NET] Matchmaking ready — stable tick", delay: 150 },
-  { text: "[WORLD] Fog still hiding the rest of the map", delay: 300 },
-  { text: "[RUN] One more map, then bed…", delay: 500 },
-  { text: "[TECH] Civic queue: next unlock waiting", delay: 700 },
+  { text: "[ICE] Black ICE scan clear — no trace", delay: 300 },
+  { text: "[JACK] Neural uplink established", delay: 500 },
+  { text: "[ECO] Eco round — buy smart", delay: 700 },
   { text: "[READY] Save the kit — round still winnable.", delay: 900 },
 ];
 
@@ -38,10 +38,9 @@ function getLineColor(text: string): string | null {
     return accentProjects || "oklch(0.7 0.18 142)";
   if (text.includes("SCAN")) return accentExperience || "oklch(0.73 0.14 75)";
   if (text.includes("[NET]")) return accentBlog || "oklch(0.62 0.17 255)";
-  if (text.includes("[MAP]") || text.includes("[WORLD]"))
-    return accentExperience || "oklch(0.73 0.14 75)";
-  if (text.includes("[RUN]")) return accentProjects || "oklch(0.7 0.18 142)";
-  if (text.includes("[TECH]")) return accentSkills || "oklch(0.68 0.19 330)";
+  if (text.includes("[ICE]")) return accentSkills || "oklch(0.68 0.19 330)";
+  if (text.includes("[JACK]")) return accentHero || "oklch(0.76 0.14 194)";
+  if (text.includes("[ECO]")) return accentExperience || "oklch(0.73 0.14 75)";
   if (text.includes("READY")) {
     return accentHero || "oklch(0.76 0.14 194)";
   }

@@ -41,7 +41,7 @@ jobs:
       - uses: codespell-project/actions-codespell@v2
         with:
           check_filenames: true
-          ignore_words_list: adn,aman,thanvi,doj,ustp,cisa,nasa,umd,sdls,cfs,nos3,ccds,ngn,scan,ltsc,eoust,govt,config,astro,oklch
+          ignore_words_list: scan,config,astro,oklch
           skip: ./.git,./node_modules,./dist,./.astro
         continue-on-error: true
 

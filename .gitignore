@@ -15,3 +15,5 @@ node_modules/
 .astro/
 # Legacy
 .kilocode/
+# Contains personal contact info - not meant to be published
+public/Profile.pdf

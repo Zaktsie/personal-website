@@ -6,7 +6,7 @@ brand
 
 ## Users
 
-Security leaders, technical recruiters, collaborators, and hiring teams reviewing Aman Thanvi's credibility under time pressure. They need quick evidence of federal cybersecurity experience, hands-on engineering range, research maturity, and professional signal without digging through a resume first.
+Technical recruiters, hiring managers, and collaborators reviewing Isaac Tsienyane's credibility under time pressure. They need quick evidence of frontend and mobile engineering range, shipped product work, and professional signal without digging through a resume first.
 
 ## Product Purpose
 
@@ -14,7 +14,7 @@ The site is a single-page portfolio for Isaac Zak Tsienyane:  a full stack devel
 
 ## Brand Personality
 
-Precise, field-tested, and quietly distinctive. The tone should feel like a practiced security operator: calm under pressure, technically literate, and comfortable moving between policy, engineering, and research.
+Precise, field-tested, and quietly distinctive. The tone should feel like a practiced product engineer: calm under pressure, technically literate, and comfortable moving between frontend, mobile, and backend integration work.
 
 ## Anti-references
 

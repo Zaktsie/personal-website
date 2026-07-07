@@ -1,6 +1,6 @@
 ---
 name: Zak Tsienyane Personal Website
-description: A precise, field-tested cybersecurity portfolio with restrained HUD atmosphere and strong evidence scanning.
+description: A precise, field-tested developer portfolio with restrained HUD atmosphere and strong evidence scanning.
 colors:
   bg: "oklch(0.1 0.026 268)"
   surface: "oklch(0.138 0.03 268)"
@@ -81,7 +81,7 @@ components:
     padding: "2px 8px"
 ---
 
-# Design System: Aman Thanvi Personal Website
+# Design System: Isaac Tsienyane Personal Website
 
 ## 1. Overview
 

@@ -7,6 +7,7 @@ interface Certification {
   name: string;
   issuer: string;
   icon: string;
+  url?: string;
 }
 
 interface Honor {
@@ -48,7 +49,7 @@ const { certifications, honors, categories, languages } = skillsData as {
       </h3>
       <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {certifications.map((cert) => (
-          <BadgeShield name={cert.name} issuer={cert.issuer} icon={cert.icon} />
+          <BadgeShield name={cert.name} issuer={cert.issuer} icon={cert.icon} href={cert.url} />
         ))}
       </div>
     </div>

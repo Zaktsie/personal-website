@@ -18,7 +18,7 @@
 - `npm run build` — production build to `dist/`.
 - `npm run preview` — preview built site locally.
 - `npm run check` — Astro type checking.
-- `codespell --ignore-words-list adn,aman,thanvi,doj,ustp,cisa,nasa,umd,sdls,cfs,nos3,ccds,ngn,scan,ltsc,eoust,govt,config,astro,oklch --skip .git,node_modules,dist,.astro` — spellcheck.
+- `codespell --ignore-words-list scan,config,astro,oklch --skip .git,node_modules,dist,.astro` — spellcheck.
 
 ## Coding Style & Naming Conventions
 

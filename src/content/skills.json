@@ -1,48 +1,47 @@
 {
   "certifications": [
-    { "name": "Google Cybersecurity Professional", "issuer": "Google", "icon": "🔐" },
-    { "name": "Microsoft Azure Fundamentals", "issuer": "Microsoft", "icon": "☁️" },
-    { "name": "Microsoft Security, Compliance & Identity", "issuer": "Microsoft", "icon": "🛡" },
-    { "name": "CompTIA A+", "issuer": "CompTIA", "icon": "🔧" },
-    { "name": "CodePath Cybersecurity with Honors", "issuer": "CodePath", "icon": "🏅" }
+    { "name": "CCNA", "issuer": "Cisco", "icon": "🌐" },
+    { "name": "Responsive Web Design", "issuer": "freeCodeCamp", "icon": "📱", "url": "https://www.freecodecamp.org/certification/arszak/responsive-web-design" },
+    { "name": "JavaScript Algorithms and Data Structures", "issuer": "freeCodeCamp", "icon": "🧩", "url": "https://www.freecodecamp.org/certification/arszak/javascript-algorithms-and-data-structures" },
+    { "name": "Front End Libraries", "issuer": "freeCodeCamp", "icon": "⚛️", "url": "https://www.freecodecamp.org/certification/arszak/front-end-development-libraries" },
+    { "name": "Legacy Front End", "issuer": "freeCodeCamp", "icon": "💻", "url": "https://www.freecodecamp.org/certification/arszak/legacy-front-end" },
+    { "name": "Data Visualization", "issuer": "freeCodeCamp", "icon": "📊", "url": "https://www.freecodecamp.org/certification/arszak/legacy-data-visualization" },
+    { "name": "Vue JS 3: Composition API (Pinia, Firebase 9 & Vite)", "issuer": "Udemy", "icon": "🖖", "url": "https://www.udemy.com/certificate/UC-81bf719a-942b-4d54-9523-4188e63dd2e3/" },
+    { "name": "Vue JS 3 & Firebase", "issuer": "Udemy", "icon": "🔥", "url": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-c5267b7e-9afa-4413-bd22-a012bea886d8.pdf" },
+    { "name": "Vue Masterclass", "issuer": "Udemy", "icon": "🎓", "url": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-f887529a-02b9-47ae-b8bf-76011cad9e5c.pdf" },
+    { "name": "Tailwind CSS From Scratch", "issuer": "Udemy", "icon": "🎨", "url": "https://www.udemy.com/certificate/UC-5a0641cb-8aae-41b1-a1d9-e4050677475e/" }
   ],
   "honors": [
-    { "name": "CyberCorps Scholarship for Service (SFS)", "org": "University of Maryland" },
-    { "name": "Phi Kappa Phi Honor Society", "org": "University of Maryland" },
-    { "name": "Alpha Lambda Delta Honor Society", "org": "University of Maryland" },
-    { "name": "Dean's List", "org": "University of Maryland" },
-    { "name": "Maryland Seal of Biliteracy (Spanish)", "org": "State of Maryland" },
-    { "name": "AP Scholar", "org": "College Board" }
+    { "name": "Best Innovative Idea — MiWay Hackathon", "org": "MiWay Insurance, 2023" },
+    { "name": "Runner-up — MiWay Hackathon", "org": "MiWay Insurance, 2025" },
+    { "name": "Originated & Built the Miduty POC", "org": "MiWay Insurance" }
   ],
   "categories": [
     {
-      "name": "Cybersecurity",
-      "skills": ["Red & Blue Team", "Vulnerability Assessment", "Penetration Testing", "Threat Intelligence", "Network Security", "MITRE ATT&CK", "DFIR", "SDLC Security", "Cryptography", "Reverse Engineering", "Binary Analysis"]
+      "name": "Frontend",
+      "skills": ["JavaScript", "Vue.js", "Nuxt.js", "React.js", "Astro", "Backbone.js", "jQuery", "HTML/CSS", "Tailwind CSS", "Coffeescript"]
     },
     {
-      "name": "Cloud & DevOps",
-      "skills": ["AWS", "Azure", "GCP", "Docker", "GitHub Actions", "Terraform", "CI/CD", "Zscaler", "Teleport"]
+      "name": "Mobile",
+      "skills": ["iOS (Swift)", "Android (Java)", "Permission Flows", "Huawei HMS Integration"]
     },
     {
-      "name": "Application Security",
-      "skills": ["SAST", "DAST", "Burp Suite", "OWASP ZAP", "Checkmarx", "Acunetix", "Secure Code Review", "Snyk", "SonarQube"]
+      "name": "Backend & Data",
+      "skills": ["PHP", "Laravel", "Node.js", "MySQL", "MongoDB", "Firebase Realtime Database", "Oracle"]
     },
     {
-      "name": "Programming & Tools",
-      "skills": ["Python", "C/C++", "Bash", "Java", "TypeScript", "Rust", "Go", "Wireshark", "Ghidra", "Binary Ninja", "GDB"]
+      "name": "Frontend Tooling & Testing",
+      "skills": ["Vite", "Pinia", "Jest", "Vue Testing Library", "ESLint"]
     },
     {
-      "name": "Networking & Systems",
-      "skills": ["TCP/IP", "Firewalls", "Linux", "Unix", "pfSense", "Shell Scripting", "Splunk", "OSINT"]
-    },
-    {
-      "name": "Data & AI/ML",
-      "skills": ["TensorFlow", "Pandas", "scikit-learn", "Elasticsearch", "MongoDB", "ML Evasion Research"]
+      "name": "Tools & Platforms",
+      "skills": ["Git", "npm", "REST APIs", "Ajax", "Axios", "Google Maps API", "Google Auth", "Prismic CMS", "WordPress", "CCNA Networking"]
     }
   ],
   "languages": [
-    { "name": "English", "level": "Native" },
-    { "name": "Spanish", "level": "Fluent" },
-    { "name": "Hindi", "level": "Beginner" }
+    { "name": "English", "level": "Professional Working" },
+    { "name": "Setswana", "level": "Native / Bilingual" },
+    { "name": "Zulu", "level": "Fluent" },
+    { "name": "Japanese", "level": "Conversational" }
   ]
 }

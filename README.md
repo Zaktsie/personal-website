@@ -1,4 +1,4 @@
-# Aman Thanvi — Personal site
+# Isaac Tsienyane — Personal site
 
 Static portfolio built with [Astro](https://astro.build/) (v5), [Tailwind CSS](https://tailwindcss.com/) v4, and [Three.js](https://threejs.org/) for an optional background. Single scrolling homepage plus MDX blog posts, multiple themes (including Arcade), deployed to GitHub Pages.
 

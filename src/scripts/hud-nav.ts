@@ -9,7 +9,6 @@ const SECTIONS: NavSection[] = [
   { id: 'projects', label: 'Projects', accent: 'var(--color-accent-projects)' },
   { id: 'experience', label: 'Experience', accent: 'var(--color-accent-experience)' },
   { id: 'skills', label: 'Skills', accent: 'var(--color-accent-skills)' },
-  { id: 'blog', label: 'Blog', accent: 'var(--color-accent-blog)' },
 ];
 
 let cleanup: (() => void) | null = null;

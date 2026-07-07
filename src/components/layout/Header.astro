@@ -6,7 +6,6 @@ const sections = [
   { id: 'projects', label: 'Projects', short: 'Work', accent: 'var(--color-accent-projects)' },
   { id: 'experience', label: 'Experience', short: 'Exp', accent: 'var(--color-accent-experience)' },
   { id: 'skills', label: 'Skills', short: 'Skills', accent: 'var(--color-accent-skills)' },
-  { id: 'blog', label: 'Blog', short: 'Blog', accent: 'var(--color-accent-blog)' },
 ];
 ---
 
@@ -39,7 +38,7 @@ const sections = [
 <nav
   data-section-nav
   data-mobile-nav
-  class="fixed inset-x-2 top-2 z-40 grid grid-cols-5 items-center gap-0 rounded-lg border border-border/60 bg-bg/95 p-1 shadow-lg shadow-bg/10 md:hidden"
+  class="fixed inset-x-2 top-2 z-40 grid grid-cols-4 items-center gap-0 rounded-lg border border-border/60 bg-bg/95 p-1 shadow-lg shadow-bg/10 md:hidden"
   aria-label="Section navigation"
 >
   {sections.map((s, i) => (

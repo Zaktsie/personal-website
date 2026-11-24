@@ -66,12 +66,16 @@ Edit `content/data/shelf.json`. Each item has `kind` (`game` or `book`), `title`
 
 ## Deployment
 
-The site runs on any Nitro host. Content pages are prerendered at build time.
+Merging to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): `npm ci`, a type check, then `npm run generate` with `NITRO_PRESET=github_pages`, and publishes `.output/public` to GitHub Pages. Every page is prerendered, so no server or credentials are needed. `public/CNAME` keeps the custom domain (`isaactsienyane.co.za`) attached.
 
-- **Vercel / Netlify:** import the repo. The preset is detected automatically and the build command is `npm run build`.
-- **Firebase App Hosting:** connect the repo in the Firebase console. For classic Firebase Hosting + Functions, build with `NITRO_PRESET=firebase npm run build`.
+You can also run it by hand from the Actions tab (**Deploy to GitHub Pages**, then **Run workflow**).
 
-Point the `isaactsienyane.co.za` DNS at the new host, then remove `public/CNAME` (it was only used by GitHub Pages).
+To preview the exact production output locally:
+
+```bash
+NITRO_PRESET=github_pages npm run generate
+npx serve .output/public
+```
 
 ## Credits
 

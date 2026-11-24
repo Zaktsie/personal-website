@@ -6,7 +6,7 @@
 - **App code** lives in `app/` (Nuxt 4 layout): `pages/`, `components/`, `composables/`, `assets/css/main.css`, `app.vue`, `error.vue`.
 - **Content** lives in `content/`: `apps/*.md` (showcase), `blog/*.md` (posts), `data/*.json` (experience, skills, shelf). Schemas are in `content.config.ts`; a bad field fails the build.
 - **Static assets**: `public/`.
-- **CI**: `.github/workflows/quality.yml` (markdown/yaml lint, spellcheck, typecheck). Deployment is through the host's Git integration (Vercel/Netlify/Firebase).
+- **CI/CD**: `.github/workflows/deploy.yml` type-checks, statically generates (`NITRO_PRESET=github_pages npm run generate`) and deploys to GitHub Pages on every push to `main`. `quality.yml` runs lint, spellcheck and typecheck.
 
 ## Commands
 

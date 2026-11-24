@@ -1,0 +1,6 @@
+{
+  "items": [
+    { "kind": "game", "title": "Grand Theft Auto VI", "by": "Rockstar Games", "status": "now", "platform": "PS5", "color": "#d6336c" },
+    { "kind": "book", "title": "Contact Zero", "by": "David Wolstencroft", "status": "now", "color": "#7a1f2b" }
+  ]
+}

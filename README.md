@@ -1,41 +1,82 @@
-# Isaac Tsienyane — Personal site
+# Isaac Tsienyane, personal site
 
-Static portfolio built with [Astro](https://astro.build/) (v5), [Tailwind CSS](https://tailwindcss.com/) v4, and [Three.js](https://threejs.org/) for an optional background. Single scrolling homepage plus MDX blog posts, multiple themes (including Arcade), deployed to GitHub Pages.
+Portfolio, apps showcase and blog for a senior full-stack and Android developer. Built with [Nuxt 4](https://nuxt.com/), [Nuxt Content](https://content.nuxt.com/) and [Tailwind CSS](https://tailwindcss.com/) v4.
 
 ## Quick start
 
 ```bash
 npm ci
-npm run dev
+npm run dev      # http://localhost:3000
 ```
 
-Other scripts: `npm run build` (output in `dist/`), `npm run preview`, `npm run check`. See [`AGENTS.md`](AGENTS.md) for CI, spellcheck, and pre-commit expectations.
+Other scripts: `npm run build`, `npm run preview`, `npm run check` (type checking). Node 22.5+ is required (Nuxt Content uses the built-in `node:sqlite`).
 
 ## Repository layout
 
 | Path | Purpose |
 |------|---------|
-| [`src/pages/`](src/pages/) | Routes: [`index.astro`](src/pages/index.astro), [`blog/[...slug].astro`](src/pages/blog/[...slug].astro), [`404.astro`](src/pages/404.astro) |
-| [`src/components/`](src/components/) | Layout, sections, UI, Three.js |
-| [`src/content/`](src/content/) | Collections (`projects/`, `blog/`), [`experience.json`](src/content/experience.json), [`skills.json`](src/content/skills.json) |
-| [`src/styles/`](src/styles/) | Global Tailwind theme tokens and section styles |
-| [`public/`](public/) | Static assets copied to site root (`robots.txt`, `site.webmanifest`, `CNAME`, images under `public/images/`) |
+| `app/pages/` | Routes: `/`, `/apps`, `/apps/[slug]`, `/blog`, `/blog/[slug]`; `app/error.vue` handles 404s |
+| `app/components/` | Phone launcher, live demo lab (`AndroidLab.vue`), home-screen widgets (`widgets/`), header, footer |
+| `app/assets/css/main.css` | Design tokens (light/dark) and article typography |
+| `content/` | Everything editable: apps, posts and data |
+| `content.config.ts` | Collection schemas (validated at build time) |
+| `public/` | Static files served as-is (images, manifest, robots.txt) |
 
 ## Editing content
 
-- **Projects and blog**: Markdown/MDX under [`src/content/projects/`](src/content/projects/) and [`src/content/blog/`](src/content/blog/).
-- **Experience and skills**: JSON in [`src/content/`](src/content/).
-- **Hero and section copy**: Astro components under [`src/components/sections/`](src/components/sections/) (not a single root HTML file).
-- **Profile photo**: place or replace [`public/images/profile.jpg`](public/images/profile.jpg) (referenced as `/images/profile.jpg` in the build).
+### Add an app to the showcase
+
+Create `content/apps/<slug>.md`:
+
+```markdown
+---
+title: My Android App
+description: One or two sentences for search results and link previews.
+tagline: The one-line pitch shown in lists.
+platforms: [android]          # android | ios | web | backend
+status: in-development        # in-development | shipped | archived
+stack: [Kotlin, Jetpack Compose, Firebase]
+role: Solo developer          # optional
+year: 2026                    # optional
+featured: true                # optional, pins it on the home page
+order: 1                      # lower shows first
+color: "#2f5bea"              # icon colour when there's no icon image
+icon: /images/apps/my-app/icon.png             # optional
+playStore: https://play.google.com/store/apps/details?id=...   # optional
+github: https://github.com/Zaktsie/...           # optional
+url: https://...                                 # optional
+screenshots:                                     # optional, phone-shaped images
+  - /images/apps/my-app/1.png
+---
+
+Write the case study here in Markdown.
+```
+
+### Write a blog post
+
+Create `content/blog/<slug>.md` with `title`, `description`, `date` and optional `tags` and `draft: true`.
+
+### Games and books
+
+Edit `content/data/shelf.json`. Each item has `kind` (`game` or `book`), `title`, `by`, `status` (`now` or `favourite`), a `color`, and an optional `platform` and `note`. The `now` game and book drive the "Now playing" and "Reading now" widgets on the home page.
+
+### Experience and skills
+
+`content/data/experience.json` and `content/data/skills.json`.
 
 ## Deployment
 
-Pushes to `main` (or manual [`workflow_dispatch`](https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow)) run [`.github/workflows/pages.yml`](.github/workflows/pages.yml): `npm ci`, `npm run build`, then deploy the **`dist`** artifact to GitHub Pages.
+Merging to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml): `npm ci`, a type check, then `npm run generate` with `NITRO_PRESET=github_pages`, and publishes `.output/public` to GitHub Pages. Every page is prerendered, so no server or credentials are needed. `public/CNAME` keeps the custom domain (`isaactsienyane.co.za`) attached.
 
-## Accessibility, performance, and privacy
+You can also run it by hand from the Actions tab (**Deploy to GitHub Pages**, then **Run workflow**).
 
-Semantic HTML, keyboard navigation, theme and motion preferences are part of the design. Performance and manual test notes live in [`AGENTS.md`](AGENTS.md). There are no analytics trackers or cookies; the site loads webfonts from Google Fonts (JetBrains Mono, Sora, Marcellus, Silkscreen — see [`src/components/layout/BaseHead.astro`](src/components/layout/BaseHead.astro)).
+To preview the exact production output locally:
 
-## Credits and contributing
+```bash
+NITRO_PRESET=github_pages npm run generate
+npx serve .output/public
+```
 
-Third-party licenses, font attribution, and game-culture homage disclaimers are in [`CREDITS.md`](CREDITS.md). Contributor workflow and tooling are in [`AGENTS.md`](AGENTS.md).
+## Credits
+
+See [`CREDITS.md`](CREDITS.md).

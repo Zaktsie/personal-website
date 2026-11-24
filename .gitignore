@@ -6,13 +6,18 @@ Thumbs.db
 # Caches and logs
 *.log
 .cache/
-# Build outputs
+# Nuxt
+.nuxt/
+.output/
+.data/
+.vercel/
+.netlify/
 dist/
-build/
 # Dependencies
 node_modules/
-# Astro type cache
-.astro/
+# Env
+.env
+.env.*
 # Legacy
 .kilocode/
 # Contains personal contact info - not meant to be published
